@@ -71,8 +71,8 @@ def summarization():
 
 @app.route('/transcribe',methods=['GET','POST'])
 def transcription():
-    apikey = 'LFkzx_UQCpr2QvgszR-0oz9L3ToszpMke0R7D7PDcWs4'
-    url = 'https://api.au-syd.speech-to-text.watson.cloud.ibm.com/instances/31b9f2a5-d2fe-4254-a051-accc44f5b454'
+    apikey = 'api-key-of-your-cloud-service(audio-to-text)'
+    url = 'url-of-cloud-service'
 
     file_name="Video"
     output_dir="downloads"
