@@ -11,3 +11,4 @@
   o	webdriver-manager: pip install webdriver-manager
 
 ### This project is build for Transcribing the Youtube Videos. Also the summarization of transcribed text is done and both are displayed on the webpage 
+### We did not use any NLP frameworks for summerizing the text, intead we use a free website that helps in summarizing the text and for that automation is done using 'Selenium' framework.
