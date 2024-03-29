@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="static/style.css">
+
+    <title>YouTube Summarizer</title>
+</head>
+<body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <div class="youtube-transcriber">
+
+        <h1 id="heading"></h1>
+        <div class="form">
+            <form action="/transcribe" class="trans-form" method="post">
+                <input type="url" placeholder="Enter Your Link" name="url_input">
+                <button type="submit" class="btn">Submit</button>
+            </form>
+
+            <div class="trans-text">
+                <textarea name="trans-area" id="trans-area" cols="60" rows="10" placeholder="Your transcribed text will appear here" readonly>{{transcript}}</textarea>
+            </div>
+
+            <form action="/summarize" class="summ-form" method="post">
+                <button class="btn">Summarize</button>
+            </form>
+
+            <div class="trans-text">
+                <textarea name="trans-area" id="trans-area" cols="60" rows="10" placeholder="Your summarized text will appear here" readonly>
+                    {% if text %}
+                        {% for paragraph in text %}
+{{ paragraph }}
+                        {% endfor %}
+                    {% else %}
+Your summarized text will appear here
+                    {% endif %}
+                </textarea>
+            </div>
+        </div>
+    </div>
+        
+    <script src="static/index.js"></script>
+</body>
+</html>
